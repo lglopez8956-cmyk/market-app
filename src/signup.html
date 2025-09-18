@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <link rel="icon" href="icons/carrito.png" type="image/png">
 </head>
 <body>
-    <center><h1>Register</h1></center>
+    <center><h1>Register Form</h1></center>
+    <form name="Register-form" action="signup.php" method="post">
     <table align="center">
         <tr><td><label>Firstname:</label></td></tr>
-        <tr><td><input type="text"></td></tr>
+        <tr><td><input type="text" name="fname" placeholder="Firstname" required></td></tr>
         <tr><td><label>Lastname:</label></td></tr>
-        <tr><td><input type="text"></td></tr>
+        <tr><td><input type="text" name="lname" placeholder="Lastname" required></td></tr>
         <tr><td><label>Mobile phone:</label></td></tr>
-        <tr><td><input type="text"></td></tr>
+        <tr><td><input type="text" name="mnumber" placeholder="Mobile phone" required></td></tr>
         <tr><td><label>Identification number:</label></td></tr>
-        <tr><td><input type="text"></td></tr>
+        <tr><td><input type="text" name="idenumber"  placeholder="Identification number" required></td></tr>
         <tr><td><label>E-mail:</label></td></tr>
-        <tr><td><input type="text"></td></tr>
+        <tr><td><input type="text" name="email" placeholder="E-mail" required></td></tr>
         <tr><td><label>Password:</label></td></tr>
-        <tr><td><input type="text"><br></td></tr>
-        <tr><td><center><button style="background-color: rgb(240, 120, 120); margin-top: 1ex; margin-bottom: 1ex;">Register</button></center></td></tr>
+        <tr><td><input type="text" name="passwd" placeholder="Password" required><br></td></tr>
+        <tr><td><center><button style="background-color: red">Register</button></center></td></tr>
     </table>  
+    </form>
 </body>
 </html>
