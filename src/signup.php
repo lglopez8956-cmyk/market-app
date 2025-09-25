@@ -9,7 +9,8 @@
     $e_mail = $_POST['email'];
     $p_wd = $_POST['passwd'];
 
-    $ec_pass = password_hash($p_wd, PASSWORD_BCRYPT);
+    //$ec_pass = password_hash($p_wd, PASSWORD_BCRYPT);
+    $ec_pass = md5($p_wd);
     
     $check_email="
     SELECT
@@ -41,7 +42,7 @@ $res_check =pg_query($conn, $check_email);
         password
 
     ) VALUES (
-        '$f_name', '$l_name', '$m_number', '$ide_number', '$e_mail', '$p_wd'
+        '$f_name', '$l_name', '$m_number', '$ide_number', '$e_mail', '$ec_pass'
     )
     ";
     //execute query
@@ -55,3 +56,4 @@ $res_check =pg_query($conn, $check_email);
         echo "Something wrong!";
     }
 ?>
+
