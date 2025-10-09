@@ -2,12 +2,12 @@
     //get database acces
     require('../config/database.php');
     //get form data
-    $f_name = $_POST['fname'];
-    $l_name = $_POST['lname'];
-    $m_number = $_POST['mnumber'];
-    $ide_number = $_POST['idenumber'];
-    $e_mail = $_POST['email'];
-    $p_wd = $_POST['passwd'];
+    $f_name = trim ($_POST['fname']);
+    $l_name = trim ($_POST['lname']);
+    $m_number = trim ($_POST['mnumber']);
+    $ide_number = trim ($_POST['idenumber']);
+    $e_mail = trim ($_POST['email']);
+    $p_wd = trim ($_POST['passwd']);
 
     //$ec_pass = password_hash($p_wd, PASSWORD_BCRYPT);
     $ec_pass = md5($p_wd);
@@ -24,7 +24,7 @@
     ";
 
 
-$res_check =pg_query($conn, $check_email);
+$res_check =pg_query($conn_supa, $check_email);
     if(pg_num_rows($res_check) >0){
         echo "<script>alert('sucess !!! go to login')</script>";+
         header('refresh:0;url=signup.html');
@@ -46,7 +46,7 @@ $res_check =pg_query($conn, $check_email);
     )
     ";
     //execute query
-    $res = pg_query($conn, $query);
+    $res = pg_query($conn_supa, $query);
     //validate result
     if($res){
         //echo "Users has been created sucessfully!!!";

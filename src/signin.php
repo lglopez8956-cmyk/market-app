@@ -20,7 +20,7 @@ limit 1
 ";
 
 //step 4. execute query
-$res_check = pg_query($conn, $sql_check_user);
+$res_check = pg_query($conn_supa, $sql_check_user);
 
 if(pg_num_rows($res_check)> 0){
    echo "<scrip>alert('Go to main page !!')</script>";
